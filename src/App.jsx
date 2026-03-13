@@ -12,7 +12,15 @@ function ScrollToTop() {
   const { pathname } = useLocation()
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    setTimeout(() => {
+      const serviceSection = document.querySelector(".detail-wrap")
+
+      if (serviceSection) {
+        serviceSection.scrollIntoView({ behavior: "auto", block: "start" })
+      } else {
+        window.scrollTo({ top: 0, left: 0, behavior: "auto" })
+      }
+    }, 50)
   }, [pathname])
 
   return null
