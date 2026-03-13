@@ -368,7 +368,7 @@ function ServicePage({ title, price, children }) {
       <section className="section">
         <div className="detail-wrap">
           <div className="detail-back">
-            <Link to="/">← Back to Services</Link>
+            <Link to="/#services">← Back to Services</Link>
           </div>
 
           <div className="detail-card">
