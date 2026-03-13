@@ -9,19 +9,27 @@ import clusterRepair from './assets/cluster-repair.jpeg'
 import clusterAfter from './assets/cluster-after.jpeg'
 
 function ScrollToTop() {
-  const { pathname } = useLocation()
+  const location = useLocation()
 
   useEffect(() => {
     setTimeout(() => {
-      const serviceSection = document.querySelector(".detail-wrap")
+      if (location.hash) {
+        const el = document.querySelector(location.hash)
+        if (el) {
+          el.scrollIntoView({ behavior: 'auto', block: 'start' })
+          return
+        }
+      }
+
+      const serviceSection = document.querySelector('.detail-wrap')
 
       if (serviceSection) {
-        serviceSection.scrollIntoView({ behavior: "auto", block: "start" })
+        serviceSection.scrollIntoView({ behavior: 'auto', block: 'start' })
       } else {
-        window.scrollTo({ top: 0, left: 0, behavior: "auto" })
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
       }
     }, 50)
-  }, [pathname])
+  }, [location])
 
   return null
 }
