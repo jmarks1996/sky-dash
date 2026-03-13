@@ -15,16 +15,5 @@ export async function onRequestPost(context) {
     problem,
   })
 
-  return new Response(
-    JSON.stringify({
-      success: true,
-      message: 'Form received successfully.',
-    }),
-    {
-      status: 200,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    }
-  )
+  return Response.redirect("https://marksseadoorepair.com/?submitted=true", 302)
 }
