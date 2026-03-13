@@ -51,8 +51,10 @@ function Layout({ children }) {
                 alt="Marks Sea-Doo Repair Logo"
                 className="site-logo"
               />
-              <p className="eyebrow">Central Texas</p>
-              <h1>Marks Sea-Doo Repair</h1>
+              <div>
+                <p className="eyebrow">Central Texas</p>
+                <h1>Marks Sea-Doo Repair</h1>
+              </div>
             </div>
             <a href="#contact" className="nav-btn">Contact</a>
           </nav>
@@ -81,50 +83,51 @@ function Layout({ children }) {
       <main>{children}</main>
 
       <section id="contact" className="section">
-  <p className="section-label">CONTACT</p>
-  <h3>Request Service</h3>
+        <div className="contact-panel">
+          <p className="section-label">CONTACT</p>
+          <h3>Request Service</h3>
 
-  <form
-    action="/api/contact"
-    method="POST"
-    className="contact-form"
-  >
+          <form
+            action="/api/contact"
+            method="POST"
+            className="contact-form"
+          >
+            <label>
+              Name
+              <input type="text" name="name" placeholder="Your name" />
+            </label>
 
-    <label>
-      Name
-      <input type="text" name="name" placeholder="Your name" />
-    </label>
+            <label>
+              Email *
+              <input type="email" name="email" required placeholder="your@email.com" />
+            </label>
 
-    <label>
-      Email *
-      <input type="email" name="email" required placeholder="your@email.com" />
-    </label>
+            <label>
+              Phone Number
+              <input type="tel" name="phone" placeholder="512-555-1234" />
+            </label>
 
-    <label>
-      Phone Number
-      <input type="tel" name="phone" placeholder="512-555-1234" />
-    </label>
+            <label>
+              Sea-Doo Year / Model
+              <input type="text" name="year" placeholder="2016 GTI 130" />
+            </label>
 
-    <label>
-      Sea-Doo Year / Model
-      <input type="text" name="ski" placeholder="2016 GTI 130" />
-    </label>
+            <label>
+              Problem or Service Requested
+              <textarea
+                name="problem"
+                rows="5"
+                placeholder="Describe the issue or service needed..."
+              ></textarea>
+            </label>
 
-    <label>
-      Problem or Service Requested
-      <textarea
-        name="problem"
-        rows="5"
-        placeholder="Describe the issue or service needed..."
-      ></textarea>
-    </label>
-
-    <button type="submit" className="nav-btn">
-      Send Request
-    </button>
-
-  </form>
-</section>
+            <button type="submit" className="nav-btn">
+              Send Request
+            </button>
+          </form>
+        </div>
+      </section>
+    </div>
   )
 }
 
