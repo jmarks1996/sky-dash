@@ -394,6 +394,18 @@ img {
   color: #cbd5e1;
 }
 
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.site-logo {
+  width: 140px;
+  max-width: 100%;
+  margin-bottom: 8px;
+}
+
 @media (max-width: 900px) {
   .two-col,
   .contact-grid,

@@ -18,7 +18,12 @@ function Layout({ children }) {
       >
         <div className="overlay">
           <nav className="nav">
-            <div>
+            <div className="brand">
+              <img
+                src="/logo.png"
+                alt="Marks Sea-Doo Repair Logo"
+                className="site-logo"
+              />
               <p className="eyebrow">Central Texas</p>
               <h1>Marks Sea-Doo Repair</h1>
             </div>
