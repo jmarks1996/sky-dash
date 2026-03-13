@@ -1,11 +1,22 @@
 import './App.css'
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route, Link, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 
 import heroImage from './assets/seadoo-hero.jpeg'
 import clusterBefore from './assets/cluster-before.jpeg'
 import clusterBeforeRepair from './assets/cluster-before-repair.jpeg'
 import clusterRepair from './assets/cluster-repair.jpeg'
 import clusterAfter from './assets/cluster-after.jpeg'
+
+function ScrollToTop() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
+  return null
+}
 
 function Layout({ children }) {
   return (
@@ -523,13 +534,16 @@ function DiagnosticPage() {
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/oil-change" element={<OilChangePage />} />
-      <Route path="/carbon-seal-replacement" element={<CarbonSealPage />} />
-      <Route path="/wear-ring-replacement" element={<WearRingPage />} />
-      <Route path="/lcd-gauge-cluster-repair" element={<ClusterRepairPage />} />
-      <Route path="/diagnostic-scan" element={<DiagnosticPage />} />
-    </Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/oil-change" element={<OilChangePage />} />
+        <Route path="/carbon-seal-replacement" element={<CarbonSealPage />} />
+        <Route path="/wear-ring-replacement" element={<WearRingPage />} />
+        <Route path="/lcd-gauge-cluster-repair" element={<ClusterRepairPage />} />
+        <Route path="/diagnostic-scan" element={<DiagnosticPage />} />
+      </Routes>
+    </>
   )
 }
