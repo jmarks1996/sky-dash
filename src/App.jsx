@@ -81,37 +81,50 @@ function Layout({ children }) {
       <main>{children}</main>
 
       <section id="contact" className="section">
-        <div className="contact-panel">
-          <p className="section-label">Contact</p>
-          <h3>Ready to get your ski looked at?</h3>
-          <p>
-            Call or text with the year, model, and symptoms of your Sea-Doo.
-            Mobile service available around Central Texas lakes and surrounding
-            cities. If the issue cannot be repaired, there is no repair labor charge.
-          </p>
+  <p className="section-label">CONTACT</p>
+  <h3>Request Service</h3>
 
-          <p className="availability-note">
-            Appointments are scheduled based on availability since this is an
-            independent side operation.
-          </p>
+  <form
+    action="/api/contact"
+    method="POST"
+    className="contact-form"
+  >
 
-          <div className="contact-grid">
-            <div className="contact-card">
-              <p className="contact-label">Phone</p>
-              <p className="contact-value">(512) 817-3499</p>
-            </div>
-            <div className="contact-card">
-              <p className="contact-label">Email</p>
-              <p className="contact-value">info@marksseadoorepair.com</p>
-            </div>
-            <div className="contact-card">
-              <p className="contact-label">Facebook</p>
-              <p className="contact-value">Marks Sea-Doo Repair</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+    <label>
+      Name
+      <input type="text" name="name" placeholder="Your name" />
+    </label>
+
+    <label>
+      Email *
+      <input type="email" name="email" required placeholder="your@email.com" />
+    </label>
+
+    <label>
+      Phone Number
+      <input type="tel" name="phone" placeholder="512-555-1234" />
+    </label>
+
+    <label>
+      Sea-Doo Year / Model
+      <input type="text" name="ski" placeholder="2016 GTI 130" />
+    </label>
+
+    <label>
+      Problem or Service Requested
+      <textarea
+        name="problem"
+        rows="5"
+        placeholder="Describe the issue or service needed..."
+      ></textarea>
+    </label>
+
+    <button type="submit" className="nav-btn">
+      Send Request
+    </button>
+
+  </form>
+</section>
   )
 }
 
