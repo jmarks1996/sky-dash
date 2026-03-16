@@ -56,7 +56,11 @@ function Layout({ children }) {
                 <h1>Marks Sea-Doo Repair</h1>
               </div>
             </div>
-            <a href="#contact" className="nav-btn">Contact</a>
+            {/* --- NAVIGATION BUTTONS --- */}
+            <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+                <a href="https://portal.marksseadoorepair.com/login" className="client-portal-btn">Client Portal</a>
+                <a href="#contact" className="nav-btn">Contact</a>
+            </div>
           </nav>
 
           <section className="hero-content hero-content-small">
